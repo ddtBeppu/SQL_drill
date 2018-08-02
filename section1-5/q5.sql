@@ -17,10 +17,10 @@ WHERE
 ・publish LIKE '_社'のように、'社'の前に１文字のみがある社名の出版社を検索するようになっており、題意に沿わない。
 
 正しくは、
-SELECT
-  title
-FROM
-  books
-WHERE
-  publish LIKE '%社'
+SELECT -- 選択
+  title -- 書名
+FROM -- テーブル名を指定
+  books -- booksテーブルを指定
+WHERE -- 条件で絞り込み
+  publish LIKE '%社' -- 名前が「社」で終わる出版社を検索
 ;
