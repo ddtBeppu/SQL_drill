@@ -15,3 +15,12 @@ WHERE
 /** 解答 **/
 ・SELECT title, のようにtitleのあとに','が続くのは誤り。
 ・publish LIKE '_社'のように、'社'の前に１文字のみがある社名の出版社を検索するようになっており、題意に沿わない。
+
+正しくは、
+SELECT
+  title
+FROM
+  books
+WHERE
+  publish LIKE '%社'
+;
