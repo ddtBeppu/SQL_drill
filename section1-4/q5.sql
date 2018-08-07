@@ -5,6 +5,7 @@
 */
 
 -- アンケート集計テーブル（quest）から回答日時が「2013-01-01」以降の情報のみを取りだす
+-- 確認のため、回答日時列の値も取り出している
 mysql> select name, answer1, answer2, answered from quest where answered >= "2013-01-01";
 +-----------------+---------+--------------------------+---------------------+
 | name            | answer1 | answer2                  | answered            |
