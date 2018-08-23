@@ -4,13 +4,13 @@
 */
 
 /** 解答 **/
-mysql> SELECT
-    ->  s_id,
-    ->  SUM(s_value)
-    -> FROM
-    ->  sales
-    -> GROUP BY
-    ->  s_id
+mysql> SELECT -- 選択
+    ->  s_id, -- 店舗コード
+    ->  SUM(s_value) -- 累計売上高
+    -> FROM -- テーブルを指定
+    ->  sales -- salesテーブルを指定
+    -> GROUP BY -- 以下のカラムでグルーピング
+    ->  s_id -- 店舗コードでグルーピング
     -> ;
 +-------+--------------+
 | s_id  | SUM(s_value) |
