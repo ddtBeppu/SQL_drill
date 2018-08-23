@@ -11,7 +11,7 @@ mysql> SELECT -- 選択
     ->  CASE -- 値により出力値を変える
     ->   WHEN answer1 = 3 THEN 'ためになった' -- answer1が3の時、「ためになった」
     ->   WHEN answer1 = 2 THEN '普通' -- answer1が2の時、「普通」
-    ->   WHEN answer1 = 1 THEN '役に立たない' -- answer1が1の時、「役に立たない」
+    ->   ELSE '役に立たない' -- answer1が1の時、「役に立たない」
     ->  END AS 評価, -- 以上の値を評価カラムに出力
     ->  answer2 AS 感想 -- 感想
     -> FROM -- テーブルの指定
