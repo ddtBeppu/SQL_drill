@@ -5,18 +5,18 @@
 以下の空欄を埋めて、SQL命令を完成させてください。
 */
 
-mysql> SELECT
-    ->  prefecture AS 都道府県,
-    ->  AVG(age) AS 平均年齢
-    -> FROM
-    ->  quest
-    -> GROUP BY
-    ->  prefecture
-    -> HAVING
+mysql> SELECT -- 選択
+    ->  prefecture AS 都道府県, -- 都道府県
+    ->  AVG(age) AS 平均年齢 -- 平均年齢
+    -> FROM -- テーブルを選択
+    ->  quest -- アンケート回答テーブル
+    -> GROUP BY -- 以下のカラムでまとめる
+    ->  prefecture -- 都道府県
+    -> HAVING -- 表示結果を以下のように絞り込む
     ->  (
-    ->   平均年齢 >= 35
-    ->  AND
-    ->   平均年齢 < 50
+    ->   平均年齢 >= 35 -- 平均年齢が35歳以上
+    ->  AND -- かつ
+    ->   平均年齢 < 50 -- 50歳未満
     ->  )
     -> ;
 +--------------+--------------+
