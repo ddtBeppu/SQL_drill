@@ -5,15 +5,46 @@
 */
 
 /** 解答 **/
-    SELECT
-        CONCAT(u.l_name, u.f_name)
-    FROM
-        usr AS u
-NOT EXISTS
+SELECT -- 選択
+    CONCAT(u.l_name, u.f_name) AS 氏名 -- 氏名
+FROM -- テーブルの選択
+    usr AS u -- ユーザテーブル
+LEFT JOIN -- テーブルの結合
+    quest AS q -- アンケート回答テーブル
+ON -- 対応する項目で結合
+    CONCAT(u.l_name, u.f_name) = q.name -- 氏名が等しいところで結合
+WHERE -- 条件で絞り込み
+    CONCAT(u.l_name, u.f_name) -- ユーザテーブルにおける氏名
+NOT IN -- 以下に含まれていない
     (
-    SELECT
-        q.name
-    FROM
-        quest AS q
+        SELECT -- データの取得
+            name -- 氏名
+        FROM -- テーブルの選択
+            quest -- アンケート回答テーブル
     )
 ;
++-----------------+
+| 氏名            |
++-----------------+
+| 井上一郎        |
+| 上原幸一        |
+| 江本聡          |
+| 小野雄二        |
+| 河合泰治        |
+| 木下一樹        |
+| 久保田守        |
+| 児玉毅          |
+| 坂口駿          |
+| 井上一郎        |
+| 矢口亜由美      |
+| 有木茉莉        |
+| 吉岡遥          |
+| 和田修子        |
+| 松本博美        |
+| 南沙恵          |
+| 村井佐知子      |
+| 森本絵里        |
+| 西島文子        |
+| 根岸裕子        |
++-----------------+
+20 rows in set (0.00 sec)
