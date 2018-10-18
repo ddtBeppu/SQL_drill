@@ -34,8 +34,8 @@ ON -- 以下の項目で結合
 WHERE -- 条件で絞りこみ
     om.delivery_date IS NULL -- 商品が未納のデータを選択
 ORDER BY -- 以下の項目についてソート
-    発注日 ASC, -- 発注日について昇順
-    注文コード ASC, -- 注文コードについて昇順
+    om.order_date ASC, -- 発注日について昇順
+    om.po_id ASC, -- 注文コードについて昇順
     pd.p_id ASC -- 商品コードについて昇順
 ;
 
