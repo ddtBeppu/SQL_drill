@@ -25,3 +25,5 @@ WHERE -- 条件で絞りこみ
     OR -- または
         category_id IS NULL -- 分類IDがNULL
 ;
+
+Query OK, 2 rows affected (0.07 sec)
